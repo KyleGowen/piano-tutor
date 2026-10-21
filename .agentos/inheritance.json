@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "Piano Tutor",
+    "repository": "https://github.com/KyleGowen/piano-tutor",
+    "domain": "personal/family"
+  },
+  "source": {
+    "repository": "https://github.com/KyleGowen/AgentOS",
+    "branch": "main",
+    "commit": "83b7bb6c03bd7ad620017428266db62d295dcc9a",
+    "paths": [
+      "AGENTS.md",
+      "os/context/identity.md",
+      "os/context/design-system.md",
+      "os/memory/README.md",
+      "os/context/agentos-inheritance-registry.md",
+      "os/context/current-projects.md",
+      "PLAYBOOK.md"
+    ],
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "bedf72ae4ca7ac5b72ea0ce5370de321c453242f4c04c85a43c6b2d1c3a899ae",
+        "selected_sections": [
+          "Memory",
+          "Context",
+          "Experiential Learning",
+          "Specialized Agent Inheritance (applicable external-project principles)"
+        ]
+      },
+      {
+        "path": "os/context/identity.md",
+        "sha256": "40fbe2858107ee3ed2d0a30c1cdcddedd51fe401de0ba080e183c46e621d6f24",
+        "selected_sections": [
+          "Preferences",
+          "Working Style",
+          "Voice and Tone",
+          "Rules (applicable personal-project guidance)"
+        ]
+      },
+      {
+        "path": "os/context/design-system.md",
+        "sha256": "86248ba16b8a68a9e2dcbbec65933d76e65d9b73a0c98e05deaf7c5ceca3999c",
+        "selected_sections": [
+          "Default",
+          "Inheritance"
+        ]
+      },
+      {
+        "path": "os/memory/README.md",
+        "sha256": "532eb47a1f413a523743b14550b1ecee3f9878c6c581988f93c3cef1fd6d394a",
+        "selected_sections": [
+          "How This Memory Works",
+          "Cross-device Memory Protocol",
+          "Working Memory Rules",
+          "Persistent Memory Rules",
+          "Compaction",
+          "Update Checklist (adapted to local destinations)"
+        ]
+      },
+      {
+        "path": "os/context/agentos-inheritance-registry.md",
+        "sha256": "3ef1e72d252c6cd56315c1dd70467d2ee7e0b045f8d8084403b7c08085d85d62",
+        "selected_sections": [
+          "Status Definitions",
+          "Registry (duplicate check only)",
+          "Reminder Rule",
+          "Playbook Projection"
+        ]
+      },
+      {
+        "path": "os/context/current-projects.md",
+        "sha256": "0e56601cef424ed2bb86995a98d8ef29cde7bddf09aa02942eccdf4ad08a7bf9",
+        "selected_sections": [
+          "Status scope",
+          "Privacy Boundary",
+          "Personal Projects (routing and duplicate check only)",
+          "How Agents Should Use This File"
+        ]
+      },
+      {
+        "path": "PLAYBOOK.md",
+        "sha256": "7a715607611ad867e15e18e59097ecb154feb652b49421e4a7d2306a9a2eaf09",
+        "selected_sections": [
+          "Verification",
+          "Project Surfaces & Ownership",
+          "Monthly OS Map Review (manual review only)"
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "date": "2026-10-21",
+    "basis": "Remote main verified with git ls-remote; independent clean clone matched that exact commit; all listed sources read. Existing dirty, behind local AgentOS checkout was not used as policy source.",
+    "upstream_freshness": "Verified at initialization; not a continuing freshness guarantee."
+  },
+  "cache": {
+    "path": ".agentos/global-rules.md",
+    "kind": "scoped summary, not a verbatim mirror or independent policy source"
+  },
+  "scope": {
+    "includes": [
+      "applicable working and communication preferences",
+      "privacy, approval, verification, and portable continuity principles",
+      "shadcn/ui default and documented exceptions",
+      "experiential learning and scoped agent/skill requirements"
+    ],
+    "excludes": [
+      "unrelated work and personal project context",
+      "credentials and permissions",
+      "tools and automations",
+      "unrelated memories",
+      "coursework requirements",
+      "private family or application data"
+    ],
+    "precedence": "Platform rules and explicit user instructions retain precedence; Piano Tutor local requirements, architecture, implementation, and operating procedures override inherited defaults."
+  },
+  "local_authority": {
+    "instructions": "AGENTS.md",
+    "overview": "README.md",
+    "state": "docs/project/state.md",
+    "decisions": "docs/project/decisions.md",
+    "learning_proposals": "docs/project/learning-proposals.md"
+  },
+  "learning": {
+    "default_permitted_destination": "docs/project/learning-proposals.md",
+    "mutation_boundary": "Record compact sanitized proposals; no automatic edits to agent definitions, skills, code, permissions, approval boundaries, or safety rules. Only policy-allowed deterministic operational state may update automatically in its owning location; none is defined at initialization.",
+    "future_agents": "Explicit canonical sources, context/state allowlist, permitted learning destination, and mutation boundary required.",
+    "future_skills": "A compact Post-Run Learning section is required.",
+    "promotion": "Source-grounded and generalizable; same signal in two runs or retrospective after three meaningful runs. Single high-impact failure requires an explicit reviewed change and proportionate verification. Evidence is not authorization."
+  },
+  "refresh_policy": {
+    "mode": "deliberate reviewed refresh only; no scheduled or silent refresh during ordinary development",
+    "steps": [
+      "Inspect Piano Tutor and AgentOS Git state and remotes; preserve unrelated changes. Use an isolated clone if AgentOS is dirty or behind.",
+      "Fetch current committed AgentOS main and record its full SHA. If unavailable, report the gap and retain the pinned cache without claiming freshness.",
+      "Compare every listed source at the old and new SHA using git diff OLD NEW -- SOURCE_PATHS; inspect relevant newly referenced sources. Separate upstream policy changes from unrelated context.",
+      "Read local AGENTS.md, decisions, and state. Assess each applicable upstream change against local scope and precedence; preserve local decisions. Resolve material conflicts with Kyle when authority and context do not resolve them.",
+      "Prepare a reviewable change to the scoped summary and provenance together, including new hashes, date, and scope. Apply only within explicit refresh authorization; do not silently promote learning proposals.",
+      "Verify paths, hashes, scope, privacy, design exceptions, learning destinations and mutation boundaries; review the Git diff and record any material local override in decisions.",
+      "Commit and push only authorized scoped changes under repository rules. If AgentOS tracking needs updating, use a separately authorized tracking change with stable Piano Tutor evidence; regenerate its playbook and run --check."
+    ]
+  }
+}
