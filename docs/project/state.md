@@ -2,40 +2,55 @@
 
 Last updated: 2026-10-21.
 
-- Project: Piano Tutor, an independent personal/family project.
-- Repository: <https://github.com/KyleGowen/piano-tutor>.
-- Purpose: a browser-based web app that helps Kyle's family practice piano.
-- Stage: project initialization; application development pending.
-- Development-tool preference: GPT-6 Astra. This does not require AI integration
-  in the application.
-- Framework, hosting, storage, authentication, MIDI/microphone support, curriculum,
-  and other product choices: undecided.
-- Next action: Kyle supplies the application specification and build task.
+- Stage: first functional local application implemented from Kyle's specification.
+- Features: adaptive staff reader (treble/bass/both; five levels), circle reference
+  and signature/chord quizzes, 20–240 BPM metronome with tap tempo, microphone
+  note input, responsive layouts, and light/dark themes.
+- Implementation: React/TypeScript/Vite with embedded VexFlow notation fonts;
+  static Node launcher and optional local HTTPS. No hosted service, accounts,
+  recordings, analytics, or runtime external requests.
+- Start: `npm ci`, `npm run build`, `npm start`; Mac double-click launcher included.
+  Local app uses HTTP 5173; optional HTTPS 5443 supports phone microphone access.
+  See [README](../../README.md) for device trust and operating instructions.
+- Microphone boundary: single notes, including arpeggiated chord tones. Staff
+  exercises enforce exact octave; circle chord exercises accept any octave.
+  Simultaneous chord recognition is outside this implementation.
+- Private state: theme, BPM, and selected staff level stay in this browser's
+  local storage. Session counters are ephemeral. No family data is committed.
+- Approval: Kyle selected this implementation and authorized committing and
+  pushing it on 2026-10-21. Source, tests, launch instructions, and project
+  documentation form the approved application baseline. Recover it from this
+  repository using the steps above; generate local certificates on each host.
+  The app remains locally hosted, with no public deployment.
 
-Initialization verification (2026-10-21): root instructions, README, scoped
-inheritance, and continuity files were inspected. All local links and seven
-source-file hashes match committed AgentOS `main` at
-`83b7bb6c03bd7ad620017428266db62d295dcc9a`.
+## Verification
 
-Delivery complete (2026-10-21): the existing repository was verified empty
-before publication. Kyle granted write access; the pending repository invitation
-was accepted and the scoped initialization was pushed to `main`. The published
-[initialization commit](https://github.com/KyleGowen/piano-tutor/commit/2119a0f0ea36c117d4ecd60611dd8d50b15edbf2)
-is the stable inheritance evidence. Remote `main` matched local HEAD after the
-initial push. No initialization blocker remains.
+- Strict TypeScript/production build and 11 unit checks passed. Music tests cover
+  all 15 conventional signatures, relative natural-minor scales, triad spellings,
+  progression, and generated exercises. Audio tests cover B1–C♯6 at 44.1/48 kHz,
+  harmonic-rich signals, noise rejection, attack gating, and metronome scheduling.
+- All 24 browser checks passed across desktop Chromium, mobile Chromium, and
+  mobile WebKit (iPhone viewport), including synthetic audio through the browser,
+  octave rejection, canceled-permission cleanup, tap tempo, quizzes, responsive
+  themes, and no external runtime asset requests. The WebKit fixture shadows the
+  navigator mediaDevices getter so it cannot request a physical microphone.
+- [Desktop preview](../screenshots/piano-tutor.png) was visually reviewed;
+  phone screenshots were also inspected. The fixed notation dimensions found
+  during initial testing were corrected before the final successful suite.
+- npm dependency audit: zero known vulnerabilities after compatible patches.
+- HTTP and HTTPS home-network endpoints returned 200; HTTPS was verified against
+  the generated project CA without disabling certificate validation. Certificate
+  names and chain verified. Private certificate files are ignored by Git.
+  Static-file boundary checks rejected private keys, source, Git paths, traversal,
+  and POST requests; only the intended public certificate route was accessible.
+- No real acoustic-piano session or physical-phone microphone test has occurred.
+  Synthetic tests do not establish performance in a particular room or device.
 
-AgentOS registration is committed and pushed to `main` at
-[`8094cc9865e6f0bd7190895f397e29358b666d9f`](https://github.com/KyleGowen/AgentOS/commit/8094cc9865e6f0bd7190895f397e29358b666d9f).
-Its inventory and inheritance registry record the prompt as delivered and
-implementation as verified, with the published initialization commit as evidence.
-The playbook was regenerated and `--check` passed. Remote AgentOS `main` matched
-the tracking commit after push. The existing AgentOS checkout was left untouched.
+Next action: install/trust the public local CA on a phone, open the printed HTTPS
+address, and try a short practice session at the piano. Device trust is manual;
+no system or phone trust settings were changed. Keep the host computer awake.
 
-Initialization is complete; application development is pending Kyle's next task.
-No application scaffolding, dependencies, services, or deployment were created.
-
-Learning check: no new reusable delta warrants a proposal from initialization.
-
-Read at session start. Update after meaningful tasks or project shifts. Keep
-only compact active state, blockers, next actions, and evidence. Move durable
-choices to [decisions.md](decisions.md); keep private application data out.
+Initialization provenance remains pinned to AgentOS commit
+`83b7bb6c03bd7ad620017428266db62d295dcc9a`; no governance refresh or AgentOS mutation
+was performed during application development. Initialization was published in
+Piano Tutor commit `2119a0f0ea36c117d4ecd60611dd8d50b15edbf2`.
