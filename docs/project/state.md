@@ -17,10 +17,24 @@ inheritance, and continuity files were inspected. All local links and seven
 source-file hashes match committed AgentOS `main` at
 `83b7bb6c03bd7ad620017428266db62d295dcc9a`.
 
-Delivery checkpoint: local initialization is ready. GitHub reported the target
-repository unavailable; remote existence/emptiness and push remain unverified
-pending repository creation or access. AgentOS registration is being prepared
-in an isolated checkout; do not infer published tracking from this checkpoint.
+Delivery checkpoint: initialization is committed locally at
+`2119a0f0ea36c117d4ecd60611dd8d50b15edbf2`. GitHub reported the target repository
+unavailable; remote existence/emptiness and push remain unverified pending
+repository creation or access. Kyle was asked whether to create it privately or
+enable access to an existing repository; no choice has been received yet.
+
+AgentOS registration is committed and pushed to `main` at
+[`cbd115dfdb0ba24267da20cf9c00f1696ce3073a`](https://github.com/KyleGowen/AgentOS/commit/cbd115dfdb0ba24267da20cf9c00f1696ce3073a).
+Its inventory and inheritance registry record the prompt as delivered and durable
+inheritance as locally verified, while explicitly retaining the publication
+blocker. The playbook was regenerated and `--check` passed. Remote `main` matched
+the tracking commit after push. The existing AgentOS checkout was left untouched.
+
+To finish delivery after Kyle resolves the repository question: inspect the
+remote and its refs (do not assume empty), preserve any existing history, push
+the scoped local initialization under repository rules, verify the remote SHA,
+and update this checkpoint plus the AgentOS publication evidence. Do not scaffold
+the application as part of that follow-up.
 
 Learning check: no new reusable delta warrants a proposal from initialization.
 
